@@ -1,27 +1,24 @@
 a {
-    /*color: #00B7FF;*/
-    /*color: #ff441d;*/
-    /*color: #d4d4d4;*/
     color: white;
     font-family: 'Work Sans', sans-serif;
     font-size: 14pt;
 }
 
 .logo {
-    /*color: #ff441d;*/
-    /*color: #d4d4d4;*/
     font-family: 'Eczar', serif;
     font-size: 37pt;
     margin-top: 0;
 }
 
+.feature {
+  font-family: 'Eczar', serif;
+
+}
+
 .logo-big {
-    /*color: #ff441d;*/
-    /*color: #d4d4d4;*/
     font-family: 'Eczar', serif;
-    font-size: 37pt;
+    font-size: 50pt;
     margin-top: 0;
-    padding-top: 1em;
 }
 
 .logo-arm-mobile {
@@ -41,9 +38,8 @@ a {
 
 .jumbo{
   background: url(../img/cheers.jpg) no-repeat center center;
-  /*background-color: #2637de;*/
   background-size: cover;
-  height: 80vh;
+  height: 100vh;
   color: white;
 }
 
@@ -53,24 +49,20 @@ a {
 }
 
 .landing {
-    /*color: #ff441d;*/
-    color: #d4d4d4;
-    /*background-color: #7625b6;*/
-    background-color: #2637de;
-    /*padding: 2em;*/
+    background: url(../img/cheers.jpg) no-repeat center center;
+    background-size: cover;
     height: 100vh;
-    /*color: white;*/
+    color: white;
 }
 
 .main-copy {
     font-family: 'Work Sans', sans-serif;
     font-size: 18pt;
-    /*color: #d4d4d4;*/
 }
 
 .large-copy {
-  padding-top: 4em;
-  width: 40vw;
+  /*padding-top: 2em;*/
+  width: 66vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -79,10 +71,15 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    /*border-top: 2px solid #d4d4d4;*/
     border-top: 2px solid white;
     margin: 1em 0;
     padding: 0;
+}
+
+hr.big {
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .btn-flat {
@@ -94,14 +91,10 @@ hr {
     border: 2px solid #d4d4d4;
     border: 2px solid white;
     border-radius: 3px;
-    /*color: #ff441d;*/
-    /*color: #d4d4d4;*/
     color: white;
 }
 
 #sign-up {
-    /*color: #ff441d;*/
-    /*color: #d4d4d4;*/
     color: white;
 }
 
@@ -115,8 +108,17 @@ hr {
 
 .center-bottom-large {
     position: absolute;
-    bottom: 20vh;
+    bottom: 0;
     width: 100%;
     text-align: center;
     color: #d4d4d4;
+}
+
+.icon {
+  margin-top: 2em;
+  height: 100px;
+}
+
+#footer {
+  background-color: #ff441d;
 }
