@@ -37,7 +37,6 @@ passport.use(new FacebookStrategy({
           .insert(newUser)
           .returning("id")
           .then((id) => {
-            console.log('inserting fb user');
             newUser.id = id[0];
             done(null, newUser);
           })
@@ -45,7 +44,6 @@ passport.use(new FacebookStrategy({
   }))
 
 function authenticate(email, password, done) {
-  console.log("authenticating");
   db("users")
     .where("email", email)
     .first()
@@ -63,10 +61,10 @@ function register(req, email, password, done) {
     .first()
     .then((user) => {
       if (user) {
-        return done(null, false, {message: "an account with that email has already been created"})
+        return done(null, false, {message: "An account with that email has already been created."})
       }
       if (password !== req.body.password2) {
-        return done(null, false, {message: "passwords don't match"})
+        return done(null, false, {message: "Passwords do not match."})
       }
       const newUser = {
         first_name: req.body.first_name,

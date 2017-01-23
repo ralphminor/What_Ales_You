@@ -8,12 +8,10 @@ const session = require("express-session");
 const passport = require('passport');
 require("./passport");
 
-//const db = require("./db");
 const authRoutes = require("./routes/auth");
 const beersRoutes = require("./routes/beers");
 const users = require('./routes/users');
 const app = express();
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
