@@ -2,11 +2,47 @@ const bcrypt = require("bcrypt-nodejs");
 const dotenv = require('dotenv');
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 const db = require("./db");
 dotenv.load();
 
+const FACEBOOK_APP_ID = process.env.FACEBOOK_APP_ID;
+const FACEBOOK_APP_SECRET = process.env.FACEBOOK_APP_SECRET;
+
 passport.use(new LocalStrategy(authenticate));
 passport.use("local-register", new LocalStrategy({passReqToCallback: true}, register))
+
+passport.use(new FacebookStrategy({
+    clientID: FACEBOOK_APP_ID,
+    clientSecret: FACEBOOK_APP_SECRET,
+    callbackURL: "http://localhost:3000/auth/facebook/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    db("users")
+      .where("oauth_provider", "facebook")
+      .where("oauth_id", profile.id)
+      .first()
+      .then((user) => {
+        if (user) {
+          return done(null, user)
+        }
+        const newUser = {
+          oauth_provider: "facebook",
+          oauth_id: profile.id,
+          username: profile.displayName,
+          is_admin: false
+        };
+
+        db("users")
+          .insert(newUser)
+          .returning("id")
+          .then((id) => {
+            console.log('inserting fb user');
+            newUser.id = id[0];
+            done(null, newUser);
+          })
+      })
+  }))
 
 function authenticate(email, password, done) {
   console.log("authenticating");
