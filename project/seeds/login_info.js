@@ -1,13 +1,15 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('login_info').del()
     .then(function () {
-      return Promise.all([
-        // Inserts seed entries
-        knex('table_name').insert({id: 1, colName: 'rowValue1'}),
-        knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-        knex('table_name').insert({id: 3, colName: 'rowValue3'})
-      ]);
+      const login_obj = [{
+        user_name: 'Subtlesnow',
+        first_name: 'Steve',
+        last_name: 'VanWoerkom',
+        email: 'subtleride@gmail.com',
+        password_hash: 'secretsecret'
+      }]
+      return knex('login_info').insert(login_obj);
     });
 };

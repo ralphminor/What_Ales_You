@@ -1,13 +1,24 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('beer').del()
     .then(function () {
-      return Promise.all([
-        // Inserts seed entries
-        knex('table_name').insert({id: 1, colName: 'rowValue1'}),
-        knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-        knex('table_name').insert({id: 3, colName: 'rowValue3'})
-      ]);
+      const beer_obj = [{
+        brewery: 'Alpine Dog',
+        beer_name: 'Super Steeze Pale Ale',
+        style: 'Hoppy Belgian-Style Pale Ale',
+        abv: '5.8',
+        rating: '4',
+        review: 'sample review, sample review'
+      },
+      {
+        brewery: 'Alpine Dog',
+        beer_name: 'Miss American Rye Rye',
+        style: 'Blonde Ale',
+        abv: '5.5',
+        rating: '3',
+        review: 'sample review, sample review'
+      }];
+      return knex('beer').insert(beer_obj);
     });
 };

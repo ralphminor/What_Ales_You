@@ -1,13 +1,19 @@
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('location').del()
     .then(function () {
-      return Promise.all([
-        // Inserts seed entries
-        knex('table_name').insert({id: 1, colName: 'rowValue1'}),
-        knex('table_name').insert({id: 2, colName: 'rowValue2'}),
-        knex('table_name').insert({id: 3, colName: 'rowValue3'})
-      ]);
+      const location_obj = [{
+        name: 'Alpine Dog',
+        type: 'Brewery',
+        outdoor_seating: false,
+        happy_hour: false,
+        food: false,
+        website: 'http://www.alpinedogbrewery.com/',
+        address: '1505 Odgen St. Denver, Colorado 80218',
+        rating: 3,
+        review: 'sample review, sample review'
+      }]
+      return knex('location').insert(location_obj);
     });
 };
