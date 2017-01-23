@@ -1,0 +1,124 @@
+a {
+    color: white;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14pt;
+}
+
+.logo {
+    font-family: 'Eczar', serif;
+    font-size: 37pt;
+    margin-top: 0;
+}
+
+.feature {
+  font-family: 'Eczar', serif;
+
+}
+
+.logo-big {
+    font-family: 'Eczar', serif;
+    font-size: 50pt;
+    margin-top: 0;
+}
+
+.logo-arm-mobile {
+    padding-top: 1em;
+    width: 45vw;
+}
+
+.logo-arm-left {
+  padding-top: 1em;
+  width: 20vw;
+}
+
+.logo-arm-right {
+  padding-top: 1em;
+  width: 20vw;
+}
+
+.jumbo{
+  background: url(../img/cheers.jpg) no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  color: white;
+}
+
+.padding {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.landing {
+    background: url(../img/cheers.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    color: white;
+}
+
+.main-copy {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 18pt;
+}
+
+.large-copy {
+  /*padding-top: 2em;*/
+  width: 66vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid white;
+    margin: 1em 0;
+    padding: 0;
+}
+
+hr.big {
+  width: 30vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-flat {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 20pt;
+}
+
+#log-in {
+    border: 2px solid #d4d4d4;
+    border: 2px solid white;
+    border-radius: 3px;
+    color: white;
+}
+
+#sign-up {
+    color: white;
+}
+
+.center-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #d4d4d4;
+}
+
+.center-bottom-large {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #d4d4d4;
+}
+
+.icon {
+  margin-top: 2em;
+  height: 100px;
+}
+
+#footer {
+  background-color: #ff441d;
+}

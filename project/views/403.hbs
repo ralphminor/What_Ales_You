@@ -1,0 +1,15 @@
+<div class="entry">
+  {{!-- only output if not logged in--}}
+  {{#if authenticated}}
+    <p>{{userName}}</p>
+    <h2>You are not authorized to access this page.</h2>
+    <h4><a href="/">Home</a></h4>
+    <h4><a href="/beers">Click to see the beers!</a></h4>
+    <h4><a href="/logout">Logout</a></h4>
+  {{else}}
+    <h2>You are not authorized to access this page.</h2>
+    <h4><a href="/">Home</a></h4>
+    <h4><a href="/login">Click to Login</a></h4>
+    <h4><a href="/signup">Or click here to create an account!</a></h4>
+  {{/if}}
+</div>
