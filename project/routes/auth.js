@@ -12,14 +12,17 @@ function loginRequired(req, res, next) {
 }
 
 router
-  .get('/', loginRequired, (req, res, next) => {
-      res.render('index', { userName: req.user.username, authenticated: true });
+  // .get('/', loginRequired, (req, res, next) => {
+  //     res.render('index', { userName: req.user.username, authenticated: true });
+  // })
+  .get('/', (req, res, next) => {
+    res.render("landing")
   })
-  .get("/login", (req, res, next) => {
+  .get('/login', (req, res, next) => {
     res.render("login")
   })
   .post("/login", passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/users",
     failureRedirect: "/login",
   }))
   .get("/logout", (req, res, next) => {

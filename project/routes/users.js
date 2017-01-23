@@ -20,6 +20,9 @@ function adminRequired(req, res, next) {
 
 router
   .use(bodyParser.json())
+  .get("/", (req, res, next) => {
+    res.render("users");
+  })
   .get("/", loginRequired, adminRequired, (req, res, next) => {
     db("users").then((users) => {
       res.render("users", {
@@ -27,5 +30,7 @@ router
         users,})
     }, next)
   })
+
+
 
 module.exports = router;
