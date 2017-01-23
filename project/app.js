@@ -30,6 +30,13 @@ app.use(session({ secret: "jerks", resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(authRoutes);
+
+// Look at next four lines to ensure landing page and index working.  Delete index.js?
+var index = require('./routes/index');
+var landing = require('./routes/landing');
+app.use('/', index);
+app.use('/landing', landing);
+
 app.use('/users', users);
 app.use('/beers', beersRoutes);
 
