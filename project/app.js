@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(session({ secret: "jerks", resave: false, saveUninitialized: false }));
+app.use(session({ secret: process.env.session_secret, resave: false, saveUninitialized: false }));
 // !!!Must do app.use(passport...) after app.use(session...) above.
 app.use(passport.initialize());
 app.use(passport.session());

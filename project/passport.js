@@ -15,7 +15,7 @@ passport.use("local-register", new LocalStrategy({passReqToCallback: true}, regi
 passport.use(new FacebookStrategy({
     clientID: FACEBOOK_APP_ID,
     clientSecret: FACEBOOK_APP_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
+    callbackURL: process.env.fb_cb_url
   },
   function(accessToken, refreshToken, profile, done) {
     db("users")
