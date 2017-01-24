@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "brewerydb-node": "0.0.1",
     "cookie-parser": "~1.4.3",
+    "cors": "^2.8.1",
     "debug": "~2.2.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.0",
@@ -16,6 +18,7 @@
     "knex": "^0.12.6",
     "morgan": "~1.7.0",
     "pg": "^6.1.2",
+    "request": "^2.79.0",
     "serve-favicon": "^2.3.2"
   },
   "devDependencies": {
