@@ -4,6 +4,10 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const landing = require('./routes/landing');
+const splash = require('./routes/splash');
+const brewery = require('./routes/brewery');
 const session = require("express-session");
 const passport = require('passport');
 require("./passport");
@@ -22,6 +26,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -38,6 +43,8 @@ app.use(authRoutes);
 // app.use('/landing', landing);
 
 app.use('/users', users);
+app.use('/splash', splash);
+app.use('/brewery', brewery);
 app.use('/beers', beersRoutes);
 
 // catch 404 and forward to error handler

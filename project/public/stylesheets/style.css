@@ -67,7 +67,7 @@ a {
   margin-right: auto;
 }
 
-hr {
+hr.landing {
     display: block;
     height: 1px;
     border: 0;
@@ -121,4 +121,10 @@ hr.big {
 
 #footer {
   background-color: #ff441d;
+}
+
+.brew-list {
+  color: black;
+  font-weight: 20pt;
+  font-family: 'Work Sans', sans-serif;
 }
