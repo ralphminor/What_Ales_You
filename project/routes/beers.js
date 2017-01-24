@@ -21,7 +21,7 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get("/", loginRequired, (req, res, next) => {
-    db("beers").then((beers) => {
+    db("beer").then((beers) => {
       res.render("beers", {
         title: "All Beers",
         beers,})

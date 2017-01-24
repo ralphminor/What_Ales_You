@@ -44,7 +44,7 @@ passport.use(new FacebookStrategy({
   }))
 
 function authenticate(email, password, done) {
-  db("users")
+  db("login_info")
     .where("email", email)
     .first()
     .then((user) => {
@@ -56,7 +56,7 @@ function authenticate(email, password, done) {
 }
 
 function register(req, email, password, done) {
-  db("users")
+  db("login_info")
     .where("email", email)
     .first()
     .then((user) => {
@@ -75,7 +75,7 @@ function register(req, email, password, done) {
         is_admin: false
       };
 
-      db("users")
+      db("login_info")
         .insert(newUser)
         .returning("id")
         .then((id) => {
