@@ -13,24 +13,19 @@ function loginRequired(req, res, next) {
 
 function adminRequired(req, res, next) {
   if (!req.user.is_admin) {
-    return res.render("403", { userName: req.user.username, authenticated: true });
+    return res.render("403");
   }
   next();
 }
 
 router
   .use(bodyParser.json())
-  .get("/", (req, res, next) => {
-    res.render("users");
-  })
-  .get("/", loginRequired, adminRequired, (req, res, next) => {
-    db("users").then((users) => {
-      res.render("users", {
-        title: "All Users",
-        users,})
+  .get("/", loginRequired, (req, res, next) => {
+    db("beers").then((beers) => {
+      res.render("beers", {
+        title: "All Beers",
+        beers,})
     }, next)
   })
-
-
 
 module.exports = router;

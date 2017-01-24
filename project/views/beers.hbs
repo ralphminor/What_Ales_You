@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+{{#if beers}}
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Beer Name</th>
+      <th>ABV</th>
+      <th>Rating</th>
+    </tr>
+    {{#each beers}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{beer_name}}</td>
+        <td>{{abv}}</td>
+        <td>{{rating}}</td>
+    </tr>
+    {{/each}}
+  </table>
+  <h4><a href="/users">Click to See Users</a></h4>
+  <h4><a href="/">Home</a></h4>
+  <h4><a href="/logout">Logout</a></h4>
+{{else}}
+    <p>No beers!</p>
+{{/if}}
