@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
         first_name: 'Ralph',
         last_name: 'Minor',
         email: 'ralph.purchase@icloud.com',
-        password: 'test',
+        password: '$2a$10$pe4NowIQI1rCOGNT.tczQ.wV197RFqst1lo1.FNJ9wk5FUS1RbAga',
         is_admin: false,
         oauth_provider: '',
         oauth_id: '',

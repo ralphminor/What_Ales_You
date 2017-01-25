@@ -5,16 +5,18 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const landing = require('./routes/landing');
-const splash = require('./routes/splash');
-const brewery = require('./routes/brewery');
 const session = require("express-session");
 const passport = require('passport');
 require("./passport");
 
+const landing = require('./routes/landing');
+const splash = require('./routes/splash');
+const brewery = require('./routes/brewery');
+const nearby = require('./routes/nearby');
 const authRoutes = require("./routes/auth");
 const beersRoutes = require("./routes/beers");
 const users = require('./routes/users');
+
 const app = express();
 
 // view engine setup
@@ -46,6 +48,7 @@ app.use('/users', users);
 app.use('/splash', splash);
 app.use('/brewery', brewery);
 app.use('/beers', beersRoutes);
+app.use('/nearby', nearby);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
