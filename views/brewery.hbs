@@ -1,1 +1,10 @@
-{{id}}
+<!-- list of beers per brewery  -->
+<div class="container">
+<h4 class="feature">{{breweryName}}</h4>
+
+<ul class="brews">
+  {{#each beer}}
+    <li><hr><a href="#" class="beer-list">{{this.name}}</a></li>
+  {{/each}}
+</ul>
+</div>
