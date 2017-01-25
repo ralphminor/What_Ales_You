@@ -22,23 +22,15 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get('/:lat/:lon', function(req, res) {
-    request("https://api.brewerydb.com/v2/search/geo/point?lat="+req.params.lat+"&lng=" + req.params.lon + process.env.api_key, function (error, response, body) {
+    request("https://api.brewerydb.com/v2/search/geo/point?lat=" + req.params.lat + "&lng=" + req.params.lon + "&key=" + process.env.api_key, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         let allResults = JSON.parse(body).data;
-        res.render('nearby', { brews: allResults});
-        //res.send(brewers.data[0]);
+        res.render('nearby', {
+          brews: allResults.splice(0,12),
+          lat: req.params.lat,
+          lng: req.params.lon});
       }
      });
   })
-
-
-
-
-  //   db("beer").then((beers) => {
-  //     res.render("beers", {
-  //       title: "All Beers",
-  //       beers,})
-  //   }, next)
-  // })
 
 module.exports = router;

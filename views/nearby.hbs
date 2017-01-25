@@ -1,5 +1,10 @@
+<!-- list of breweriers near me -->
+<div class="container">
+<h4 class="feature">breweries near me</h4>
 <ul class="brews">
   {{#each brews}}
-    <li>{{this.brewery.name}}</li>
+    <li><hr><a href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}" class="brew-list">{{this.brewery.name}}</a></li>
   {{/each}}
 </ul>
+<div id="map"></div>
+</div>
