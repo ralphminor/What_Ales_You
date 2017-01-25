@@ -10,6 +10,12 @@ a {
     margin-top: 0;
 }
 
+.logo-mobile {
+    font-family: 'Eczar', serif;
+    font-size: 3em;
+    margin-top: 0.5em;
+}
+
 .feature {
   font-family: 'Eczar', serif;
 
@@ -23,7 +29,7 @@ a {
 
 .logo-arm-mobile {
     padding-top: 1em;
-    width: 45vw;
+    width: 25vw;
 }
 
 .logo-arm-left {
@@ -49,10 +55,23 @@ a {
 }
 
 .landing {
-    background: url(../img/cheers.jpg) no-repeat center center;
+    background: url(../img/cheers.jpg) no-repeat center;
     background-size: cover;
     height: 100vh;
     color: white;
+}
+
+.mobile-landing {
+  height: 100vh;
+}
+
+.mobile-label {
+  font-size: 1em;
+  color: #fff;
+}
+
+.mobtn {
+  margin: 1.2em auto 0 auto;
 }
 
 .main-copy {
