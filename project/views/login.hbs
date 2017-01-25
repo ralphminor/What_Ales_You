@@ -1,36 +1,39 @@
 <body>
     <!-- header small screens -->
     <div class="mobile-landing hide-on-med-and-up">
-        <div class="landing">
+        <div class="row landing">
             <img src="img/arm-2.svg" class="logo-arm-mobile">
-            <div class="padding">
-                <div class="row">
-                  <div class="col s6">
+            <div class="">
+                <div class="">
+                  <div class="row">
+                    <div class="col s12">
+                      <h3 class="logo-mobile col s12 center">What ales you?</h3>
+
+
+                    <a href="/auth/facebook"><img src="img/fbsign.png" class="col s10 offset-s1"></a>
                     <form action="/login" method="post">
                       <div>
-                        <a href="/auth/facebook">Login with Facebook</a>
+                        <label class="col s10 offset-s1 mobile-label">Email:</label>
+                        <input type="text" class="col s10 offset-s1" name="username"/>
                       </div>
                       <div>
-                        <label>Email:</label>
-                        <input type="text" name="username"/>
+                        <label class="col s10 offset-s1 mobile-label">Password:</label>
+                        <input type="password" class="col s10 offset-s1" name="password"/>
                       </div>
                       <div>
-                        <label>Password:</label>
-                        <input type="password" name="password"/>
+                        <input type="image" name="submit" class="col s5 offset-s1" src="img/login.png" border="0" alt="Submit" />
                       </div>
-                      <div>
-                        <input type="submit" value="Log In"/>
-                      </div>
+                      <a href="/signup"><img src="img/signup1.png" class="col s5"></a>
                     </form>
-                    <h2><a href="/signup">Click here to create an account!</a></h2>
-                    <h4><a href="/">Home</a></h4>
+
+                    </div>
                   </div>
                 </div>
             </div>
-            <div class="center-bottom center-align">
+            <!-- <div class="center-bottom center-align">
                 <a class="row" href="#features">learn more</a>
                 <i class="row fa fa-2x fa-angle-down" aria-hidden="true"></i>
-            </div>
+            </div> -->
         </div>
     </div>
 
