@@ -21,15 +21,16 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get("/", (req, res, next) => {
-    res.render("users");
+    res.render("users"), next;
   })
-  .get("/", loginRequired, adminRequired, (req, res, next) => {
-    db("users").then((users) => {
-      res.render("users", {
-        title: "All Users",
-        users,})
-    }, next)
-  })
+  // .get("/", loginRequired, adminRequired, (req, res, next) => {
+  //   res.send("users 2");
+  //   // db("contact_info").then((users) => {
+  //   //   res.render("users", {
+  //   //     title: "All Users",
+  //   //     contact_info,})
+  //   // }, next)
+  // })
 
 
 

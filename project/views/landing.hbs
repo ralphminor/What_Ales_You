@@ -1,4 +1,13 @@
 <body>
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=247709195668945";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
     <!-- header small screens -->
     <div class="mobile-landing hide-on-med-and-up">
         <div class="landing">
@@ -6,7 +15,7 @@
             <div class="padding">
                 <h1 class="logo">What ales you?</h1>
                 <p class="main-copy">Review, discover, and share the best brews in the universe. <br><br> Log-in or create an account!</p>
-                <hr>
+                <hr class="landing">
                 <br>
                 <div class="center-align">
                     <a href="/login" class="waves-effect btn-flat" id="log-in">Log-in</a>
