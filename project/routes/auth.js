@@ -12,9 +12,9 @@ function loginRequired(req, res, next) {
 }
 
 router
-  // .get('/', loginRequired, (req, res, next) => {
-  //     res.render('index', { userName: req.user.username, authenticated: true });
-  // })
+  .get('/', loginRequired, (req, res, next) => {
+      res.redirect('/users');
+  })
   .get('/', (req, res, next) => {
     res.render("landing")
   })

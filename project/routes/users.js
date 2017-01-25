@@ -21,8 +21,7 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get("/", (req, res, next) => {
-    // res.render("users");
-    res.send("here!"), next;
+    res.render("users"), next;
   })
   // .get("/", loginRequired, adminRequired, (req, res, next) => {
   //   res.send("users 2");
