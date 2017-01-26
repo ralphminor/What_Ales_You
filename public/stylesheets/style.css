@@ -104,6 +104,16 @@ button a {
   border:.2em solid #fff;
 }
 
+.beer-brown-nearby {
+  background-color: #FEFAE0;
+  margin: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.5em;
+  font-weight: bold !important;
+}
 .large-label {
   font-size: 2em;
   color: #fff;
@@ -228,3 +238,4 @@ hr.big {
 .fillerLG {
   height: 5vh !important;
 }
+
