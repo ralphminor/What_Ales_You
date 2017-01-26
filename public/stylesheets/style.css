@@ -1,5 +1,5 @@
 a {
-    color: white;
+    color: ;
     font-family: 'Work Sans', sans-serif;
     font-size: 14pt;
 }
@@ -52,6 +52,10 @@ a {
 .padding {
     padding-left: 2em;
     padding-right: 2em;
+}
+
+.padding-all {
+  padding: 2em;
 }
 
 .landing {
@@ -152,4 +156,8 @@ hr.big {
   color: black;
   font-weight: 20pt;
   font-family: 'Work Sans', sans-serif;
+}
+
+#map {
+  height: 50vh;
 }
