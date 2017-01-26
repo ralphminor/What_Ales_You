@@ -78,26 +78,9 @@
 </body>
 <script>
 
-function geoFindMe() {
-  if (!navigator.geolocation){
-    return;
-  }
+$( ".nearby" ).click(function() {
+  $( this ).html('locating');
+});
 
-  function success(position) {
-    var latitude  = position.coords.latitude;
-    var longitude = position.coords.longitude;
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}.`);
-    $("#nearby1").attr('href', `/nearby/${latitude}/${longitude}`);
-    $("#nearby2").attr('href', `/nearby/${latitude}/${longitude}`);
-  }
-
-  function error() {
-    console.log("Unable to retrieve your location.");
-  }
-
-  navigator.geolocation.getCurrentPosition(success, error);
-}
-
-geoFindMe()
 
 </script>
