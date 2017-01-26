@@ -1,0 +1,186 @@
+<body>
+    <!-- header small screens -->
+    <div class="mobile-landing hide-on-med-and-up">
+        <div class="row landing">
+            <img src="img/arm-2-brown.svg" class="logo-arm-mobile">
+            <div class="">
+                <div class="">
+                  <div class="row">
+                    <div class="col s12">
+                      <h3 class="logo-mobile col s12 center">What ales you?</h3>
+
+
+                    <a href="/auth/facebook"><img src="img/fbsign.png" class="col s10 offset-s1"></a>
+                    <div>
+                        <h2 class="col s10 offset-s1 mobile-label-err">Invalid Username or Password. Please Try again</h2>
+                    </div>
+                    <form action="/login" method="post">
+                      <div>
+                        <label class="col s10 offset-s1 mobile-label">Email:</label>
+                        <input type="text" class="col s10 offset-s1" name="username"/>
+                      </div>
+                      <div>
+                        <label class="col s10 offset-s1 mobile-label">Password:</label>
+                        <input type="password" class="col s10 offset-s1" name="password"/>
+                      </div>
+                      <div class="row">
+                        <button class="col s5 offset-s1 waves-effect beer-brown btn" type="submit" name="action">Log In
+                        </button>
+                        <button class="col s4 offset-s1 waves-effect beer-brown-O btn" type="submit" name="action"><a href="/signup">Sign Up</a>
+                        </button>
+                      </div>
+
+                      <!-- <a href="/signup"><img src="img/signup1.png" class="col s5"></a> -->
+                    </form>
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <!-- <div class="center-bottom center-align">
+                <a class="row" href="#features">learn more</a>
+                <i class="row fa fa-2x fa-angle-down" aria-hidden="true"></i>
+            </div> -->
+        </div>
+    </div>
+
+    <!-- header large screem -->
+    <div class="hide-on-small-only">
+        <header class="row jumbo">
+            <div class="row">
+                <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
+                <h1 class="col s6 center logo-big">What ales you?</h1>
+                <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
+            </div>
+            <div class="row center-align large-copy">
+                <div class="padding col l12">
+                  <div class="row">
+                    <a href="/auth/facebook"><img src="img/fbsign.png" class="col s4 offset-s4"></a>
+                    <div class="col s12">
+                      <form action="/login" method="post">
+                        <div>
+                            <h2 class="col s12 large-label-err">Invalid Username or Password. Please Try again</h2>
+                        </div>
+                        <div class="row">
+                          <label class="col s12 large-label">Email:</label>
+                          <input class="col s4 form-input offset-s4" type="text" name="username"/>
+                        </div>
+                        <div class="row">
+                          <label class="col s12 large-label">Password:</label>
+                          <input class="col s4 form-input offset-s4" type="password" name="password"/>
+                        </div>
+                        <div class="row btn-tall">
+                          <button class="col s2 offset-s3 waves-effect beer-brown btn-large" type="submit" name="action">Log In
+                          </button>
+                          <button class="col s2 offset-s2 waves-effect beer-brown-O btn-large" type="submit" name="action"><a href="/signup">Sign Up</a>
+                          </button>
+                        </div>
+                      </form>
+                      <!-- <h2><a href="/signup">Click here to create an account!</a></h2>
+                      <h4><a href="/">Home</a></h4> -->
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div>
+            </div>
+        </header>
+
+        <div class="center-align center-bottom-large">
+            <a class="row" href="#features">learn more</a>
+            <i class="row fa fa-2x fa-angle-down" aria-hidden="true"></i>
+        </div>
+
+    </div>
+
+    <!-- feature desription -->
+    <main id="features">
+        <div class="row center-align">
+            <div class="col s12 m4">
+                <img class="icon" src="img/review.svg">
+                <h4 class="feature">Discover</h4>
+                <p>Using our convenient web app, you'll get all the power of gFood without having to call your order in. Order in your pajamas, order 24 hours a day, order on Christmas, we're here to serve you.</p>
+            </div>
+            <div class="col s12 m4">
+                <img class="icon" src="img/share.svg">
+                <h4 class="feature">Share</h4>
+                <p>Money: You've got it, we want it. But let it never be said we're not incredibly fair! Burger sales? Check. Pizza sales? Check. Burger and pizza sales?? Check, check, check! We seriously can't stop making deals.</p>
+            </div>
+            <div class="col s12 m4">
+                <img class="icon" src="img/rate.svg">
+                <h4 class="feature">Rate</h4>
+                <p>You've never seen ordering this quick. Our proprietary ordering rocket ship delivery team allows you to spend less time being hungry, and more time doing what matters most to you. We'd ask what that is, but gFood respects your privacy.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- cards -->
+    <div class="row" id="">
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/bar.jpg">
+                    <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/patio.jpg">
+                    <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m4">
+            <div class="card">
+                <div class="card-image">
+                    <img src="img/table.jpg">
+                    <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+                <div class="card-action">
+                    <a href="#">This is a link</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer" class="page-footer">
+        <div class="">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">What ales you</h5>
+                    <p class="grey-text text-lighten-4">This is a Q2 project ceated by Jeff, Ralph, Steve, and Ethan.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="center-align">
+                © 2014 Copyright team ICP
+            </div>
+        </div>
+    </footer>
+</body>

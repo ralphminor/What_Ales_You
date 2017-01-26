@@ -108,6 +108,12 @@ button a {
   font-size: 2em;
   color: #fff;
 }
+
+.large-label-err {
+  font-size: 2em;
+  color: red;
+}
+
 .form-input {
   font-size: 1.5em !important;
 }
@@ -115,6 +121,11 @@ button a {
 .mobile-label {
   font-size: 1em;
   color: #fff;
+}
+
+.mobile-label-err {
+  font-size: 1em;
+  color: red;
 }
 
 .mobtn {
