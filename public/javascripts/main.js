@@ -23,8 +23,8 @@ function geoFindMe() {
     date.setTime(date.getTime() + (minutes * 60 * 1000));
     var latitude  = position.coords.latitude;
     var longitude = position.coords.longitude;
-    document.cookie = `latitude=${latitude},  {expires: ${date} }`
-    document.cookie = `longitude=${longitude},  {expires: ${date} }`
+    document.cookie = `latitude=${latitude}`
+    document.cookie = `longitude=${longitude}`
     console.log(`Latitude: ${latitude}, Longitude: ${longitude}.`);
   }
 
