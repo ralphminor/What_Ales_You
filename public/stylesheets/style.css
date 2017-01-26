@@ -1,19 +1,27 @@
 a {
     color: white;
     font-family: 'Work Sans', sans-serif;
-    font-size: 14pt;
+    font-size: 1em;
+}
+
+button a {
+  color: white;
+  font-family: inherit;
 }
 
 .logo {
     font-family: 'Eczar', serif;
     font-size: 37pt;
     margin-top: 0;
+    color: #FFCB47;
 }
 
 .logo-mobile {
+    color: #FFCB47;
     font-family: 'Eczar', serif;
     font-size: 3em;
-    margin-top: 0.5em;
+    padding-top: .2em;
+    margin-top: 0em;
 }
 
 .feature {
@@ -23,8 +31,9 @@ a {
 
 .logo-big {
     font-family: 'Eczar', serif;
-    font-size: 50pt;
-    margin-top: 0;
+    font-size: 7em;
+    margin-top: 0.7em;
+    color: #FFCB47;
 }
 
 .logo-arm-mobile {
@@ -49,6 +58,11 @@ a {
   color: white;
 }
 
+.btn-large:hover {
+   background-color: #FFCB47;
+}
+}
+
 .padding {
     padding-left: 2em;
     padding-right: 2em;
@@ -65,6 +79,35 @@ a {
   height: 100vh;
 }
 
+.users-mobile {
+  height: 100vh;
+  /*background-color: #FFCB47;*/
+  background-image: url("../img/bubbles.gif");
+}
+
+.nav-mobile {
+  background-color: #FEFAE0;
+}
+
+.beer-brown-O {
+  background-color: #BC6C25;
+  opacity: .85;
+}
+
+.beer-brown {
+  background-color: #BC6C25;
+  opacity: .85;
+  border:.2em solid #fff;
+}
+
+.large-label {
+  font-size: 2em;
+  color: #fff;
+}
+.form-input {
+  font-size: 1.5em !important;
+}
+
 .mobile-label {
   font-size: 1em;
   color: #fff;
@@ -72,6 +115,11 @@ a {
 
 .mobtn {
   margin: 1.2em auto 0 auto;
+  background-color: #FEFAE0;
+}
+
+.mobtn-text {
+  color: #BC6C25;
 }
 
 .main-copy {
