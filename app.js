@@ -11,7 +11,7 @@ const passport = require('passport');
 require("./passport");
 
 const landing = require('./routes/landing');
-const splash = require('./routes/splash');
+const dash = require('./routes/dash');
 const brewery = require('./routes/brewery');
 const nearby = require('./routes/nearby');
 const rate = require('./routes/rate');
@@ -47,7 +47,7 @@ app.use(authRoutes);
 // app.use('/landing', landing);
 
 app.use('/users', users);
-app.use('/splash', splash);
+app.use('/dash', dash);
 app.use('/brewery', brewery);
 app.use('/beers', beersRoutes);
 app.use('/nearby', nearby);
