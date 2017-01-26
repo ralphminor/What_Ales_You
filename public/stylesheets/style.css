@@ -104,10 +104,26 @@ button a {
   border:.2em solid #fff;
 }
 
+.beer-brown-nearby {
+  background-color: #FEFAE0;
+  margin: 0;
+  padding-left: 2em;
+  padding-right: 2em;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.5em;
+  font-weight: bold !important;
+}
 .large-label {
   font-size: 2em;
   color: #fff;
 }
+
+.large-label-err {
+  font-size: 2em;
+  color: red;
+}
+
 .form-input {
   font-size: 1.5em !important;
 }
@@ -115,6 +131,11 @@ button a {
 .mobile-label {
   font-size: 1em;
   color: #fff;
+}
+
+.mobile-label-err {
+  font-size: 1em;
+  color: red;
 }
 
 .mobtn {
@@ -209,3 +230,12 @@ hr.big {
 #map {
   height: 50vh;
 }
+
+.filler {
+  height: 10vh !important;
+}
+
+.fillerLG {
+  height: 5vh !important;
+}
+
