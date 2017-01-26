@@ -3,6 +3,8 @@ const db = require("../db");
 const router = require("express").Router();
 const bodyParser = require('body-parser');
 const request = require('request');
+const queries = require("../queries");
+
 require("../passport");
 
 function loginRequired(req, res, next) {
@@ -19,18 +21,22 @@ function adminRequired(req, res, next) {
   next();
 }
 
+/* GET brewery page by id. */
 router
   .use(bodyParser.json())
-  .get('/:lat/:lon', loginRequired, function(req, res) {
-    request("https://api.brewerydb.com/v2/search/geo/point?lat=" + req.params.lat + "&lng=" + req.params.lon + "&key=" + process.env.api_key, function (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        let allResults = JSON.parse(body).data;
-        res.render('nearby', {
-          brews: allResults.splice(0,12),
-          lat: req.params.lat,
-          lng: req.params.lon});
-      }
-     });
+  .get('/', function(req, res) {
+    queries.getTates().then(function(data) {
+        res.render('rate', { data })
+    }).catch(function(err){
+        console.log(err)
+        res.send(err)
+    })
+})
+  .post('/:id', function(req, res) {
+
+    console.log(req.body);
+    res.send("success!")
+    // res.redirect(`/rate/${req.params.id}`)
   })
 
 module.exports = router;
