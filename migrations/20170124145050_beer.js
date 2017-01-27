@@ -5,6 +5,7 @@ exports.up = function(knex, Promise) {
     beer.string('name');
     beer.string('style');
     beer.decimal('abv');
+    beer.string('bdbid');
   })
 };
 

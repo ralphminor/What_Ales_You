@@ -1,55 +1,85 @@
 <body>
-  <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=247709195668945";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
     <!-- header small screens -->
     <div class="mobile-landing hide-on-med-and-up">
-        <div class="landing">
-            <img src="img/arm-2.svg" class="logo-arm-mobile">
-            <div class="padding">
-                <h1 class="logo">What ales you?</h1>
-                <p class="main-copy">Review, discover, and share the best brews in the universe. <br><br> Log-in or create an account!</p>
-                <hr class="landing">
-                <br>
-                <div class="center-align">
-                    <a href="/login" class="waves-effect btn-flat" id="log-in">Log-in</a>
-                    <a href="/signup" class="waves-effect btn-flat" id="sign-up">Sign up</a>
+        <div class="row landing">
+            <img src="img/arm-2-brown.svg" class="logo-arm-mobile">
+            <div class="">
+                <div class="">
+                  <div class="row">
+                    <div class="col s12">
+                      <h3 class="logo-mobile col s12 center">What ales you?</h3>
+
+
+                    <a href="/auth/facebook"><img src="img/fbsign.png" class="col s10 offset-s1"></a>
+                    <div>
+                        <h2 class="col s10 offset-s1 mobile-label-err">Invalid Username or Password. Please Try again</h2>
+                    </div>
+                    <form action="/login" method="post">
+                      <div>
+                        <label class="col s10 offset-s1 mobile-label">Email:</label>
+                        <input type="text" class="col s10 offset-s1" name="username"/>
+                      </div>
+                      <div>
+                        <label class="col s10 offset-s1 mobile-label">Password:</label>
+                        <input type="password" class="col s10 offset-s1" name="password"/>
+                      </div>
+                      <div class="row">
+                        <button class="col s5 offset-s1 waves-effect beer-brown btn" type="submit" name="action">Log In
+                        </button>
+                        <button class="col s4 offset-s1 waves-effect beer-brown-O btn" type="submit" name="action"><a href="/signup">Sign Up</a>
+                        </button>
+                      </div>
+
+                      <!-- <a href="/signup"><img src="img/signup1.png" class="col s5"></a> -->
+                    </form>
+
+                    </div>
+                  </div>
                 </div>
             </div>
-            <div class="center-bottom center-align">
+            <!-- <div class="center-bottom center-align">
                 <a class="row" href="#features">learn more</a>
                 <i class="row fa fa-2x fa-angle-down" aria-hidden="true"></i>
-            </div>
+            </div> -->
         </div>
     </div>
 
     <!-- header large screem -->
     <div class="hide-on-small-only">
         <header class="row jumbo">
-            <div>
-                <img src="img/arm-left.svg" class="logo-arm-left left">
-                <img src="img/arm-right.svg" class="logo-arm-right right">
+            <div class="row">
+                <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
+                <h1 class="col s6 center logo-big">What ales you?</h1>
+                <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
             </div>
             <div class="row center-align large-copy">
                 <div class="padding col l12">
-                    <h1 class="logo-big">What ales you?</h1>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <p class="main-copy">Review, discover, and share the best brews in the universe. <br><br> Log-in or create an account!</p>
-                    <hr class="big">
-                    <br>
-                    <div class="center-align">
-                        <a href="/login" class="waves-effect btn-flat" id="log-in">Log-in</a>
-                        <a href="/signup" class="waves-effect btn-flat" id="sign-up">Sign up</a>
+                  <div class="row">
+                    <a href="/auth/facebook"><img src="img/fbsign.png" class="col s4 offset-s4"></a>
+                    <div class="col s12">
+                      <form action="/login" method="post">
+                        <div>
+                            <h2 class="col s12 large-label-err">Invalid Username or Password. Please Try again</h2>
+                        </div>
+                        <div class="row">
+                          <label class="col s12 large-label">Email:</label>
+                          <input class="col s4 form-input offset-s4" type="text" name="username"/>
+                        </div>
+                        <div class="row">
+                          <label class="col s12 large-label">Password:</label>
+                          <input class="col s4 form-input offset-s4" type="password" name="password"/>
+                        </div>
+                        <div class="row btn-tall">
+                          <button class="col s2 offset-s3 waves-effect beer-brown btn-large" type="submit" name="action">Log In
+                          </button>
+                          <button class="col s2 offset-s2 waves-effect beer-brown-O btn-large" type="submit" name="action"><a href="/signup">Sign Up</a>
+                          </button>
+                        </div>
+                      </form>
+                      <!-- <h2><a href="/signup">Click here to create an account!</a></h2>
+                      <h4><a href="/">Home</a></h4> -->
                     </div>
+                  </div>
                 </div>
             </div>
             <div>
@@ -130,10 +160,10 @@
         </div>
     </div>
 
-    <footer id="footer" class="page-footer">
+    <footer id="footer" class="page-footer  orange lighten-1">
         <div class="">
             <div class="row">
-                <div class="col l6 s12">
+                <div class="col l6 s12 ">
                     <h5 class="white-text">What ales you</h5>
                     <p class="grey-text text-lighten-4">This is a Q2 project ceated by Jeff, Ralph, Steve, and Ethan.</p>
                 </div>
