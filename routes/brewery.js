@@ -82,7 +82,7 @@ router
     let brewery_id_promise = find_or_create_brewery(brewery_details);
     let brewery_id_and_beer_id_promise = find_or_create_beer(brewery_id_promise, beer_details);
     let inserted_tasting_obj_promise = insert_tasting(brewery_id_and_beer_id_promise, tasting_details);
-    res.redirect('/users');
+    res.redirect('back');
   }
   })
 })
