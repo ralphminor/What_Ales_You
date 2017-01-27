@@ -9,6 +9,7 @@ exports.up = function(knex, Promise) {
     brewery.string('zip');
     brewery.string('phone');
     brewery.string('website');
+    brewery.string('bdbid');
   })
 };
 
