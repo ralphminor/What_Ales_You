@@ -15,7 +15,7 @@
   {{#each beer}}
     <li><a href="/rate/{{this.id}}" class="beer-list">{{this.name}}</a>
       <div>
-      <form action="/brewery/{{this.id}}" method="POST">
+      <form action="/brewery/{{this.id}}/{{../breweryId}}" method="POST">
       <span>rating:</span>
       <input type="submit" name="rating" value="1" type="checkbox" id="test1">
       <input type="submit" name="rating" value="2" type="checkbox" id="test2">

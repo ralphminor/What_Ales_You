@@ -3,7 +3,7 @@
 <h4 class="feature">Breweries Near Me</h4>
 <ul class="brews">
   {{#each brews}}
-    <li><hr><a href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}" class="brew-list">{{this.brewery.name}}</a></li>
+    <li><hr><a href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}/{{this.streetAddress}}/{{this.locality}}/{{this.region}}/{{this.postalCode}}/{{this.brewery.website}}/{{this.phone}}" class="brew-list">{{this.brewery.name}}</a></li>
   {{/each}}
 </ul>
 <div id="map"></div>
