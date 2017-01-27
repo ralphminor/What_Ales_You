@@ -79,8 +79,8 @@ router
         }
 
     let brewery_id_promise = find_or_create_brewery(brewery_details);
-    let beer_id_promise = find_or_create_beer(brewery_id_promise, beer_details);
-    let inserted_tasting_obj_promise = insert_tasting(brewery_id_promise, beer_id_promise, tasting_details);
+    let brewery_id_and_beer_id_promise = find_or_create_beer(brewery_id_promise, beer_details);
+    let inserted_tasting_obj_promise = insert_tasting(brewery_id_and_beer_id_promise, tasting_details);
     res.redirect('/users');
   }
   })
@@ -118,7 +118,7 @@ function find_or_create_beer (brewery_id_promise, beerObj) {
       .then((beer) => {
         if (beer) {
           console.log(`Found beer in db`);
-          return beer.id;
+          return { beer_id: beer.id, brewery_id: beer.brewery_id};
         }
         else {
           console.log(`Inserting new beer`);
@@ -130,7 +130,7 @@ function find_or_create_beer (brewery_id_promise, beerObj) {
             .then((id) => {
               console.log(`Beer id follows`);
               console.log(id);
-              return id[0];
+              return {beer_id : id[0], brewery_id: beerObj.brewery_id};
             })
           return new_beer_id_promise;
         }
@@ -140,18 +140,17 @@ function find_or_create_beer (brewery_id_promise, beerObj) {
   return outer_beer_id_promise
 }
 
-function insert_tasting (brewery_id_promise, beer_id_promise, tasting_details) {
-  brewery_id_promise.then((brewery_id) => {
-    tasting_details.brewery_id = brewery_id;
-    beer_id_promise.then((beer_id) => {
-      tasting_details.beer_id = beer_id;
-      console.log(`Inserting tasting`);
-      db("tasting")
-        .insert(tasting_details)
-        .then((data) => {
-          console.log(data);
-        })
-    })
+function insert_tasting (brewery_id_and_beer_id_promise, tasting_details) {
+  brewery_id_and_beer_id_promise.then((ids) => {
+    tasting_details.brewery_id = ids.brewery_id;
+    tasting_details.beer_id = ids.beer_id;
+    console.log(`Inserting tasting`);
+    db("tasting")
+      .insert(tasting_details)
+      .returning("id")
+      .then((data) => {
+        console.log(data);
+      })
   })
   return true;
 }
