@@ -3,8 +3,48 @@
 <h4 class="feature">Breweries Near Me</h4>
 <ul class="brews">
   {{#each brews}}
-    <li><hr><a href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}" class="brew-list">{{this.brewery.name}}</a></li>
+    <li><hr><a data-options='{"latitude":"{{this.latitude}}","longitude":"{{this.longitude}}"}' href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}" class="brew-list">{{this.brewery.name}}</a></li>
   {{/each}}
 </ul>
 <div id="map"></div>
+
 </div>
+
+<script>
+function initMap() {
+
+  let locations = []
+
+  $( "a" ).each(function( index ) {
+    locations.push([`<a href="${$(this).attr('href')}">${$(this).html()}</a>`, Number($(this).data("options").latitude), Number($(this).data("options").longitude), Number(index)])
+  });
+
+  console.log(locations);
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 12,
+		center: new google.maps.LatLng(Number(Cookies.get('latitude')), Number(Cookies.get('longitude'))),
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+
+	var infowindow = new google.maps.InfoWindow({});
+
+	var marker, i;
+
+	for (i = 0; i < locations.length; i++) {
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map
+		});
+
+		google.maps.event.addListener(marker, 'click', (function (marker, i) {
+			return function () {
+				infowindow.setContent(locations[i][0]);
+				infowindow.open(map, marker);
+			}
+		})(marker, i));
+	}
+}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQiY_Y7FppE97RCXWWfxZc9leRlcmGz-o&callback=initMap"></script>
