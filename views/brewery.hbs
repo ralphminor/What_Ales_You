@@ -4,33 +4,13 @@
 
 <br>
 <iframe
-      width="100%"
-        height="20%"
+      width="50%"
+        height="500px"
         frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCY8Xs7OGljGaFq2fGqjo-ygCC6euwArCk&q={{breweryName}}" allowfullscreen>
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCY8Xs7OGljGaFq2fGqjo-ygCC6euwArCk&q={{breweryNameSearch}}" allowfullscreen>
 </iframe>
 
 {{../breweryId}}
-
-<!-- <ul class="brews">
-  {{#each beer}}
-    <li><a href="/rate/{{this.id}}" class="beer-list">{{this.name}}</a>
-      <div>
-      <form action="/brewery/{{this.id}}/{{../breweryId}}" method="POST">
-      <span>rating:</span>
-      <input type="submit" name="rating" value="1" type="checkbox" id="test1">
-      <input type="submit" name="rating" value="2" type="checkbox" id="test2">
-      <input type="submit" name="rating" value="3" type="checkbox" id="test3">
-      <input type="submit" name="rating" value="4" type="checkbox" id="test4">
-      <input type="submit" name="rating" value="5" type="checkbox" id="test5">
-      </form>
-      </div>
-    <hr>
-    </li>
-  {{/each}}
-</ul>
-</div> -->
-
 <ul class="collapsible" data-collapsible="accordion">
   {{#each beer}}
   <li>
