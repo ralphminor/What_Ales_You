@@ -23,8 +23,11 @@ router
   })
   .post("/login", passport.authenticate("local", {
     successRedirect: "/users",
-    failureRedirect: "/login",
+    failureRedirect: "/loginRetry",
   }))
+  .get("/loginRetry", (req, res) => {
+    res.render("loginRetry");
+  })
   .get("/logout", (req, res, next) => {
     req.session.destroy();
     res.redirect("/login");
@@ -34,7 +37,7 @@ router
   })
   .post("/signup", passport.authenticate("local-register", {
     successRedirect: "/",
-    failureRedirect: "/",
+    failureRedirect: "/loginRetry",
   }))
   .get('/auth/facebook', passport.authenticate('facebook'))
   .get('/auth/facebook/callback', passport.authenticate('facebook', {

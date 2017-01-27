@@ -27,6 +27,7 @@ router
     request("http://api.brewerydb.com/v2/brewery/" + req.params.brewery_id + "/beers?key=" + process.env.api_key, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         let allResults = JSON.parse(body).data;
+
          res.cookie.breweryId = req.params.brewery_id ? req.params.brewery_id : "not_listed";
          res.cookie.breweryName = req.params.brewery_name ? req.params.brewery_name  : "not_listed";
          res.cookie.breweryAddress = req.params.brewery_address ? req.params.brewery_address  : "not_listed";
@@ -36,7 +37,7 @@ router
          res.cookie.brewerySite = req.params.brewery_site ? req.params.brewery_site  : "not_listed";
          res.cookie.breweryPhone = req.params.brewery_phone ? req.params.brewery_phone  : "000-000-0000";
 
-        res.render('brewery', { beer: allResults, breweryName: req.params.brewery_name, breweryId: req.params.brewery_id});
+        res.render('brewery', { beer: allResults, breweryName: req.params.name, breweryId: req.params.id, breweryNameSearch: encodeURIComponent(req.params.name)});
       }
      });
   })
@@ -136,6 +137,7 @@ function find_or_create_beer (brewery_id_promise, beerObj) {
         }
       })
     return inner_beer_id_promise;
+
   })
   return outer_beer_id_promise
 }

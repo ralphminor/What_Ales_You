@@ -21,8 +21,8 @@ function adminRequired(req, res, next) {
 
 router
   .use(bodyParser.json())
-  .get('/:lat/:lon', loginRequired, function(req, res) {
-    request("https://api.brewerydb.com/v2/search/geo/point?lat=" + req.params.lat + "&lng=" + req.params.lon + "&key=" + process.env.api_key, function (error, response, body) {
+  .get('/', loginRequired, function(req, res) {
+    request("https://api.brewerydb.com/v2/search/geo/point?lat=" + req.cookies.latitude + "&lng=" + req.cookies.longitude + "&key=" + process.env.api_key, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         let allResults = JSON.parse(body).data;
         allResults.forEach( function(element) {
@@ -42,7 +42,7 @@ router
         });
         console.log(`All results *** ${allResults}`);
         res.render('nearby', {
-          brews: allResults.splice(0,12),
+          brews: allResults.filter(function(item) { return item.name === "Main Brewery"}).splice(0, 50),
           lat: req.params.lat,
           lng: req.params.lon});
       }
