@@ -143,6 +143,10 @@ button a {
   background-color: #FEFAE0;
 }
 
+.pf-btn {
+  font-size: 1.5em !important;
+}
+
 .mobtn-text {
   color: #BC6C25;
 }
