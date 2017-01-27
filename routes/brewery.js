@@ -37,7 +37,7 @@ router
          res.cookie.brewerySite = req.params.brewery_site ? req.params.brewery_site  : "not_listed";
          res.cookie.breweryPhone = req.params.brewery_phone ? req.params.brewery_phone  : "000-000-0000";
 
-        res.render('brewery', { beer: allResults, breweryName: req.params.name, breweryId: req.params.id, breweryNameSearch: encodeURIComponent(req.params.name)});
+        res.render('brewery', { beer: allResults, breweryName: req.params.brewery_name, breweryId: req.params.id, breweryNameSearch: encodeURIComponent(req.params.brewery_name)});
       }
      });
   })

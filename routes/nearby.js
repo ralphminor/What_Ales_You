@@ -38,7 +38,7 @@ router
           else {
             element.brewery.website = "not_listed";
           }
-          element.phone = element.phone || "000-000-0000";
+          element.phone = encodeURIComponent(element.phone) || "000-000-0000";
         });
         console.log(`All results *** ${allResults}`);
         res.render('nearby', {
