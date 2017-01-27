@@ -37,7 +37,7 @@ router
          res.cookie.brewerySite = req.params.brewery_site ? req.params.brewery_site  : "not_listed";
          res.cookie.breweryPhone = req.params.brewery_phone ? req.params.brewery_phone  : "000-000-0000";
 
-        res.render('brewery', { beer: allResults, breweryName: req.params.brewery_name, breweryId: req.params.id, breweryNameSearch: encodeURIComponent(req.params.brewery_name)});
+        res.render('brewery', { beer: allResults, breweryName: req.params.brewery_name, breweryId: req.params.brewery_id, breweryNameSearch: encodeURIComponent(req.params.brewery_name)});
       }
      });
   })
@@ -82,7 +82,7 @@ router
     let brewery_id_promise = find_or_create_brewery(brewery_details);
     let brewery_id_and_beer_id_promise = find_or_create_beer(brewery_id_promise, beer_details);
     let inserted_tasting_obj_promise = insert_tasting(brewery_id_and_beer_id_promise, tasting_details);
-    res.redirect('/users');
+    res.redirect('back');
   }
   })
 })
