@@ -25,7 +25,7 @@ function geoFindMe() {
     var longitude = position.coords.longitude;
     document.cookie = `latitude=${latitude}`
     document.cookie = `longitude=${longitude}`
-    console.log(`Latitude: ${latitude}, Longitude: ${longitude}.`);
+    // console.log(`Latitude: ${latitude}, Longitude: ${longitude}.`);
   }
 
   function error() {
