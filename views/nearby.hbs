@@ -6,6 +6,7 @@
     <li><hr><a data-options='{"latitude":"{{this.latitude}}","longitude":"{{this.longitude}}"}' href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}" class="brew-list">{{this.brewery.name}}</a></li>
   {{/each}}
 </ul>
+<img src="img/bottle.png">
 <div id="map"></div>
 
 </div>
@@ -22,18 +23,25 @@ function initMap() {
   console.log(locations);
 
 	var map = new google.maps.Map(document.getElementById('map'), {
-		zoom: 12,
+		zoom: 13,
 		center: new google.maps.LatLng(Number(Cookies.get('latitude')), Number(Cookies.get('longitude'))),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 
 	var infowindow = new google.maps.InfoWindow({});
 
+  var bottle = {
+    url: "img/bottle.png",
+    scaledSize: new google.maps.Size(18*1.3, 62*1.3)
+  }
+
+
 	var marker, i;
 
 	for (i = 0; i < locations.length; i++) {
 		marker = new google.maps.Marker({
 			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      icon: bottle,
 			map: map
 		});
 
@@ -41,6 +49,12 @@ function initMap() {
 			return function () {
 				infowindow.setContent(locations[i][0]);
 				infowindow.open(map, marker);
+        map.panTo(marker.getPosition())
+			}
+		})(marker, i))
+    google.maps.event.addListener(infowindow, 'closeclick', (function (marker, i) {
+			return function () {
+        map.panTo(new google.maps.LatLng(Number(Cookies.get('latitude')), Number(Cookies.get('longitude'))))
 			}
 		})(marker, i));
 	}
