@@ -28,7 +28,8 @@ router
       if (!error && response.statusCode === 200) {
         let allResults = JSON.parse(body).data;
         res.cookie('breweryName', req.params.name)
-        res.render('brewery', { beer: allResults, breweryName: req.params.name, breweryId: req.params.id});
+        res.render('brewery', { beer: allResults, breweryName: req.params.name, breweryId: req.params.id,
+          breweryNameSearch: encodeURIComponent(req.params.name)});
       }
      });
   })
