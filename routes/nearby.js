@@ -42,7 +42,7 @@ router
         });
         console.log(`All results *** ${allResults}`);
         res.render('nearby', {
-          brews: allResults.filter(function(item) { return item.name === "Main Brewery"}).splice(0, 50),
+          brews: allResults.filter(function(item) { return item.name === "Main Brewery"}).splice(0, 12),
           lat: req.params.lat,
           lng: req.params.lon});
       }

@@ -4,6 +4,14 @@ a {
     font-size: 1em;
 }
 
+.brews-near {
+  margin-top: 2em;
+}
+
+.beer {
+  margin-top: 1em;
+}
+
 button a {
   color: white;
   font-family: inherit;
@@ -241,4 +249,8 @@ hr.big {
 
 .fillerLG {
   height: 5vh !important;
+}
+
+.my-beer {
+  background-color: grey;
 }

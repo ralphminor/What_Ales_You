@@ -1,13 +1,16 @@
 <!-- list of breweriers near me -->
 <div class="container beer-brown-nearby">
-<h4 class="feature">Breweries Near Me</h4>
+  <div class="row">
+    <a class="col l1 s2 beer" href="/users"><img src="img/bottle.png"/></a>
+    <h4 class="feature col l11 s10 brews-near">Breweries Near Me</h4>
+  </div>
+
+<div id="map"></div>
 <ul class="brews">
   {{#each brews}}
     <li><hr><a data-options='{"latitude":"{{this.latitude}}","longitude":"{{this.longitude}}"}'  href="/brewery/{{this.brewery.id}}/{{this.brewery.name}}/{{this.streetAddress}}/{{this.locality}}/{{this.region}}/{{this.postalCode}}/{{this.brewery.website}}/{{this.phone}}" class="brew-list">{{this.brewery.name}}</a></li>
   {{/each}}
 </ul>
-<img src="img/bottle.png">
-<div id="map"></div>
 
 </div>
 
@@ -16,7 +19,7 @@ function initMap() {
 
   let locations = []
 
-  $( "a" ).each(function( index ) {
+  $( "a.brew-list" ).each(function( index ) {
     locations.push([`<a href="${$(this).attr('href')}">${$(this).html()}</a>`, Number($(this).data("options").latitude), Number($(this).data("options").longitude), Number(index)])
   });
 

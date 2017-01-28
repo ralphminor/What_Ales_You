@@ -1,142 +1,86 @@
 <body>
     <!-- header small screens -->
     <div class="users-mobile hide-on-med-and-up">
-      <nav>
-        <div class="nav-wrapper nav-mobile">
-          <h3 class="logo-mobile col s12 center">These Ale Me</h3>
-        </div>
-      </nav>
+        <nav>
+            <div class="nav-wrapper nav-mobile">
+                <h3 class="logo-mobile col s12 center">These Ale Me</h3>
+            </div>
+        </nav>
         <div class="">
             <div class="row center">
                 <div class="col s12">
                     <div class="row">
                         <button id="b-button" href="/beers" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
-                        <button id="br-button"href="/ratings" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
+                        <button id="br-button" href="/ratings" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
                         <button id="f-button" href="/favs" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
                     </div>
-                    <ul class="pf-list">
-                        <li id="name1">Filler</li>
-                        <li id="info1">Filler</li>
-                        <li id="rating1">7/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name2">Filler</li>
-                        <li id="info2">Filler</li>
-                        <li id="rating2">2/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name3">Filler</li>
-                        <li id="info3">Filler</li>
-                        <li id="rating3">2/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name4">Filler</li>
-                        <li id="info4">Filler</li>
-                        <li id="rating4">2/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name5">Filler</li>
-                        <li id="info5">Filler</li>
-                        <li id="rating5">2/10</li>
-                    </ul>
+                    <div class="row my-beer">
+                        {{#if beers}}
+                            <table>
+                                <tr>
+                                    <th>Beer Name</th>
+                                    <th>ABV</th>
+                                    <th>Rating</th>
+                                </tr>
+                                {{#each beers}}
+                                    <tr>
+                                        <td>{{name}}</td>
+                                        <td>{{abv}}</td>
+                                        <td>{{beer_rating}}</td>
+                                    </tr>
+                                {{/each}}
+                              </table>
+                        {{else}}
+                            <p>No beers!</p>
+                        {{/if}}
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 
     <!-- header large screem -->
     <div class="hide-on-small-only">
         <header class="row jumbo">
             <div>
-              <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
-              <h1 class="col s6 center logo-big">These Ale Me</h1>
-              <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
+                <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
+                <h1 class="col s6 center logo-big">These Ale Me</h1>
+                <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
             </div>
             <div class="row center-align large-copy">
                 <div class="padding col s12">
-                  <div class="row">
-                    <div class="col s12">
-                        <button id="b-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
-                        <button id="br-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
-                        <button id="f-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
+                    <div class="row">
+                        <button id="beer-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
+                        <button id="brew-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
+                        <button id="fav-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
                     </div>
-                    <ul class="collection with-header">
-                       <li class="collection-item avatar">
-                            <span id="name1" class="title left black-text">Beer</span>
-                            <div class="center"><p id="brewry1" class="black-text center">First Line</p>
-                            <p id="rating1" class="black-text">Rating</p></div>
-                            <a id="fav-button1" class="secondary-content"><i class="material-icons">fav</i></a>
-                        </li>
-                    
-                       <li class="collection-item avatar">
-                            <span id="name2" class="title left black-text">Beer</span>
-                            <div class="center"><p id="brewry2" class="black-text center">First Line</p>
-                            <p id="rating2" class="black-text">Rating</p></div>
-                            <a id="fav-button2" class="secondary-content"><i class="material-icons">fav</i></a>
-                        </li>
-                    
-                       <li class="collection-item avatar">
-                            <span id="name3" class="title left black-text">Beer</span>
-                            <div class="center"><p id="brewry3" class="black-text center">First Line</p>
-                            <p id="rating3" class="black-text">Rating</p></div>
-                            <a id="fav-button3" class="secondary-content"><i class="material-icons">fav</i></a>
-                        </li>
-                    
-                       <li class="collection-item avatar">
-                            <span id="name4" class="title left black-text">Beer</span>
-                            <div class="center"><p id="brewry4" class="black-text center">First Line</p>
-                            <p id="rating4" class="black-text">Rating</p></div>
-                            <a id="fav-button4" class="secondary-content"><i class="material-icons">fav</i></a>
-                        </li>
-                        
-                       <li class="collection-item avatar">
-                            <span id="name5" class="title left black-text">Beer</span>
-                            <div class="center"><p id="brewry5" class="black-text center">First Line</p>
-                            <p id="rating5" class="black-text">Rating</p></div>
-                            <a id="fav-button5" class="secondary-content"><i class="material-icons">fav</i></a>
-                        </li>
-                    </ul>
-                    <button id="next-five">Next Five -></button>
-                  </div>
+                    <div class="row my-beer">
+                        {{#if beers}}
+                            <table>
+                                <tr>
+                                    <th>Beer Name</th>
+                                    <th>ABV</th>
+                                    <th>Rating</th>
+                                </tr>
+                                {{#each beers}}
+                                    <tr>
+                                        <td>{{name}}</td>
+                                        <td>{{abv}}</td>
+                                        <td>{{beer_rating}}</td>
+                                    </tr>
+                                {{/each}}
+                              </table>
+                        {{else}}
+                            <p>No beers!</p>
+                        {{/if}}
+                    </div>
                 </div>
-            </div>
             </div>
         </header>
-   <footer id="footer" class="page-footer  orange lighten-1">
-        <div class="">
-            <div class="row">
-                <div class="col l6 s12 ">
-                    <h5 class="white-text">What ales you</h5>
-                    <p class="grey-text text-lighten-4">This is a Q2 project ceated by Jeff, Ralph, Steve, and Ethan.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Github</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">About</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="center-align">
-                © 2017 Copyright team ICP
-            </div>
-        </div>
-    </footer>
+    </div>
     <script>
-        var bBtn = document.getElementById('b-button');
-        var brBtn = document.getElementById('br-button');
-        var fBtn = document.getElementById('f-button');
-
-        var nextBtn = document.getElementById('next-five');
-        
-        document.ready(
-            function fiveMore(){
-                nextBtn.onclick('html', );
-            }
-        );
-
+        // $('#beer-button').click(function() {
+        //   $('.my-beer').fadeToggle()
+        // })
     </script>
 </body>
