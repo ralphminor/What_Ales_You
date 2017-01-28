@@ -21,9 +21,11 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get("/", loginRequired, (req, res, next) => {
-    db("beer").then((beers) => {
+    db("beer").innerJoin("tasting", function() {
+      this.on('tasting.beer_id', '=', 'beer.id')
+    })
+    .then((beers) => {
       res.render("dash", {
-        title: "All Beers",
         beers,})
     }, next)
   })
