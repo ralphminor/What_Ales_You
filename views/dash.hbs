@@ -1,90 +1,86 @@
 <body>
     <!-- header small screens -->
     <div class="users-mobile hide-on-med-and-up">
-      <nav>
-        <div class="nav-wrapper nav-mobile">
-          <h3 class="logo-mobile col s12 center">These Ale Me</h3>
-        </div>
-      </nav>
+        <nav>
+            <div class="nav-wrapper nav-mobile">
+                <h3 class="logo-mobile col s12 center">These Ale Me</h3>
+            </div>
+        </nav>
         <div class="">
             <div class="row center">
                 <div class="col s12">
                     <div class="row">
                         <button id="b-button" href="/beers" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
-                        <button id="br-button"href="/ratings" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
+                        <button id="br-button" href="/ratings" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
                         <button id="f-button" href="/favs" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
                     </div>
-                    <ul class="pf-list">
-                        <li id="name1">Filler</li>
-                        <li id="info1">Filler</li>
-                        <li id="rating1">7/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name2">Filler</li>
-                        <li id="info2">Filler</li>
-                        <li id="rating2">2/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name3">Filler</li>
-                        <li id="info3">Filler</li>
-                        <li id="rating3">2/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name4">Filler</li>
-                        <li id="info4">Filler</li>
-                        <li id="rating4">2/10</li>
-                    </ul>
-                    <ul class="pf-list">
-                        <li id="name5">Filler</li>
-                        <li id="info5">Filler</li>
-                        <li id="rating5">2/10</li>
-                    </ul>
+                    <div class="row my-beer">
+                        {{#if beers}}
+                            <table>
+                                <tr>
+                                    <th>Beer Name</th>
+                                    <th>ABV</th>
+                                    <th>Rating</th>
+                                </tr>
+                                {{#each beers}}
+                                    <tr>
+                                        <td>{{name}}</td>
+                                        <td>{{abv}}</td>
+                                        <td>{{beer_rating}}</td>
+                                    </tr>
+                                {{/each}}
+                              </table>
+                        {{else}}
+                            <p>No beers!</p>
+                        {{/if}}
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 
     <!-- header large screem -->
     <div class="hide-on-small-only">
         <header class="row jumbo">
             <div>
-              <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
-              <h1 class="col s6 center logo-big">These Ale Me</h1>
-              <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
+                <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
+                <h1 class="col s6 center logo-big">These Ale Me</h1>
+                <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
             </div>
             <div class="row center-align large-copy">
                 <div class="padding col s12">
-                  <div class="row">
+                    <div class="row">
                         <button id="beer-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
                         <button id="brew-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
                         <button id="fav-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
+                    </div>
+                    <div class="row my-beer">
+                        {{#if beers}}
+                            <table>
+                                <tr>
+                                    <th>Beer Name</th>
+                                    <th>ABV</th>
+                                    <th>Rating</th>
+                                </tr>
+                                {{#each beers}}
+                                    <tr>
+                                        <td>{{name}}</td>
+                                        <td>{{abv}}</td>
+                                        <td>{{beer_rating}}</td>
+                                    </tr>
+                                {{/each}}
+                              </table>
+                        {{else}}
+                            <p>No beers!</p>
+                        {{/if}}
+                    </div>
                 </div>
-                <div class="row my-beer">
-                {{#if beers}}
-                  <table>
-                    <tr>
-                      <th>Beer Name</th>
-                      <th>ABV</th>
-                      <th>Rating</th>
-                    </tr>
-                    {{#each beers}}
-                    <tr>
-                        <td>{{name}}</td>
-                        <td>{{abv}}</td>
-                        <td>{{beer_rating}}</td>
-                    </tr>
-                    {{/each}}
-                {{else}}
-                    <p>No beers!</p>
-                {{/if}}
-              </div>
-                </div>
-            </div>
             </div>
         </header>
+    </div>
     <script>
-        $('#beer-button').click(function() {
-          $('.my-beer').fadeToggle()
-        })
+        // $('#beer-button').click(function() {
+        //   $('.my-beer').fadeToggle()
+        // })
     </script>
 </body>
