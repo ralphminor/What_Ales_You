@@ -22,7 +22,7 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get('/', loginRequired, function(req, res) {
-    console.log(req.cookies.latitude," and ",req.cookies.longitutde, process.env.api_key);
+    console.log(req.cookies.latitude," and ",req.cookies.longitude, process.env.api_key);
     request("https://api.brewerydb.com/v2/search/geo/point?lat=" + req.cookies.latitude + "&lng=" + req.cookies.longitude + "&key=" + process.env.api_key, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         let allResults = JSON.parse(body).data;

@@ -1,0 +1,146 @@
+<body>
+    <!-- header small screens -->
+    <div class="users-mobile hide-on-med-and-up">
+        <nav>
+            <div class="nav-wrapper nav-mobile">
+                <a href="/users"><h3 class="logo-mobile col s12 center">What ales you?</h3></a>
+            </div>
+        </nav>
+
+
+        <div class="row">
+
+                <ul class="tabs row">
+                    <li class="tab col s12"><a class="active tabs-headers" href="#mybeers">My Settings</a></li>
+                </ul>
+
+
+
+                <div class="row my-beer">
+                    {{#if user}}
+                    {{#each user}}
+                        <ol class="beer-links">
+                          <li><b>Username: </b>{{username}}</li>
+                          <li><b>First Name: </b>{{first_name}}</li>
+                          <li><b>Last Name: </b>{{last_name}}</li>
+                          <li><b>email: </b>{{email}}</li>
+                          <li><b>password: </b>XXXXXXXXXXXX</li>
+                          <li><b>DOB: </b>{{dob}}</li>
+                          <li><b>Address: </b>{{address1}}</li>
+                          <li><b>Address2: </b>{{address2}}</li>
+                          <li><b>City: </b>{{city}}</li>
+                          <li><b>State: </b>{{state}}</li>
+                          <li><b>Zip: </b>{{zip}}</li>
+                          <li><b>Phone: </b>{{phone}}</li>
+                          <li><b>Email marketing Opt-in? </b>Yes</li>
+                        </ol>
+                    {{/each}}
+                    {{else}}
+                      <div class="no-beers"
+                        <p class="beer-links center">There is a problem locating your user information.</p>
+                        <p class="beer-links center">Please contact an administrator at admin@whatalesyou.com.</p>
+                      </div>
+                    {{/if}}
+                </div>
+
+
+
+        </div>
+    </div>
+
+
+    <!-- header large screens -->
+    <div class="hide-on-small-only row jumbo">
+
+            <div class="row">
+                <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
+                <a href="/users"><h1 class="col s6 center logo-big">What ales you?</h1></a>
+                <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
+            </div>
+
+            <div class="custom-tab row">
+                <div class="col s12 tabs-regular">
+                    <ul class="tabs row">
+                        <li class="tab col s12"><a class="active tabs-headers-lrg" href="#mybeers2">My Settings</a></li>
+                    </ul>
+                </div>
+
+                <div id="mybeers2" class="row tab-main my-beer">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s6 tabs-regular">
+                                <h4>Setting Name</h4></div>
+                            <div class="col s6 tabs-regular">
+                                <h4>Current Value</h4></div>
+                        </div>
+                        {{#if user}}
+
+                            {{#each user}}
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Username:</div>
+                                    <div class="col s6 tabs-large">{{username}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">First Name:</div>
+                                    <div class="col s6 tabs-large">{{first_name}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Last Name:</div>
+                                    <div class="col s6 tabs-large">{{last_name}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Email:</div>
+                                    <div class="col s6 tabs-large">{{email}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Password:</div>
+                                    <div class="col s6 tabs-large">XXXXXXXXXXXX</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Date of birth:</div>
+                                    <div class="col s6 tabs-large">{{dob}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Address 1:</div>
+                                    <div class="col s6 tabs-large">{{address1}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Address 2:</div>
+                                    <div class="col s6 tabs-large">{{address2}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">City:</div>
+                                    <div class="col s6 tabs-large">{{city}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">State:</div>
+                                    <div class="col s6 tabs-large">{{state}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Zip:</div>
+                                    <div class="col s6 tabs-large">{{zip}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Phone:</div>
+                                    <div class="col s6 tabs-large">{{phone}}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col s6 tabs-large">Email Marketing Opt-In?</div>
+                                    <div class="col s6 tabs-large">Yes</div>
+                                </div>
+
+
+                            {{/each}}
+
+                        {{else}}
+                            <p class="beer-links center">You have no beer ratings yet!</p>
+                            <p class="beer-links center">Time to go to the pub!</p>
+                        {{/if}}
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    <script>
+    </script>
+</body>
