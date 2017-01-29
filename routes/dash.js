@@ -21,10 +21,18 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get("/", loginRequired, (req, res, next) => {
-    db("beer").innerJoin("tasting", function() {
+    db("tasting")
+    .select(["beer.name as name", "beer.abv as abv", "tasting.beer_rating as beer_rating", "tasting.date as date", "brewery.name as brewery"])
+    .where("user_id", req.user.id)
+    .innerJoin("brewery", function() {
+      this.on('tasting.brewery_id', '=', 'brewery.id')
+    })
+    .innerJoin("beer", function() {
+      console.log(req.user.id)
       this.on('tasting.beer_id', '=', 'beer.id')
     })
     .then((beers) => {
+      console.log(beers);
       res.render("dash", {
         beers,})
     }, next)

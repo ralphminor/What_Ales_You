@@ -1,3 +1,9 @@
+$( document ).ready(function(){
+  $('ul.tabs').tabs();
+  $('.collapsible').collapsible();
+});
+
+
 // smooth scroll
 $('a[href*="#"]:not([href="#"])').click(function() {
   if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -12,8 +18,10 @@ $('a[href*="#"]:not([href="#"])').click(function() {
   }
 });
 
+
+
 function geoFindMe() {
-  if (!navigator.geolocation){
+  if (!navigator.geolocation) {
     return;
   }
 
@@ -21,7 +29,7 @@ function geoFindMe() {
     var date = new Date();
     var minutes = 10;
     date.setTime(date.getTime() + (minutes * 60 * 1000));
-    var latitude  = position.coords.latitude;
+    var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
     document.cookie = `latitude=${latitude}`
     document.cookie = `longitude=${longitude}`
@@ -36,8 +44,3 @@ function geoFindMe() {
 }
 
 geoFindMe()
-
-
-
-
-  $('.collapsible').collapsible();
