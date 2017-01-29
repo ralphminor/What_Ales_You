@@ -170,6 +170,16 @@ button a {
   color: #fff;
 }
 
+.signup-label {
+  font-size: 1.5em;
+  color: #BC6C25;
+}
+
+.test {
+  color: #000 !important;
+  margin: 0 10em 0 1em !important;
+}
+
 .mobile-label-err {
   font-size: 1em;
   color: red;
@@ -364,4 +374,14 @@ hr.big {
 .custom-tab {
   width: 75vw;
   margin: 1em auto !important;
+}
+
+ol {
+  margin: 0 !important;
+}
+
+.signup {
+  margin: 0.5em;
+  background-color: #FEFAE0;
+  height: 100vh;
 }
