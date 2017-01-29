@@ -1,38 +1,38 @@
 <body>
 
 <!-- For small screens -->
-<div class="hide-on-med-and-up">
+<div class="hide-on-med-and-up ">
     <nav>
         <div class="nav-wrapper nav-mobile">
-            <a href="/users"><h3 class="logo-mobile col s12 center">Sign up!</h3></a>
+            <a href="/users"><h3 class="logo-mobile col s12 center">What ales you?</h3></a>
         </div>
     </nav>
 </div>
 
-<section class="signup">
-  <form action="/signup" method="post">
-    <div>
-      <label class="signup-label">First Name:</label>
-      <input class="test" type="text" name="first_name"/>
+<section class="row signup">
+  <form class="col s12" action="/signup" method="post">
+    <div class="row">
+      <label class="col s12 signup-label">First Name:</label>
+      <input class="col s12 test" type="text" name="first_name"/>
     </div>
-    <div>
-      <label class="signup-label">Last Name:</label>
-      <input class="test" type="text" name="last_name"/>
+    <div class="row">
+      <label class="col s12 signup-label">Last Name:</label>
+      <input class="col s12 test" type="text" name="last_name"/>
     </div>
-    <div>
-      <label class="signup-label">Email:</label>
-      <input class="test" type="text" name="username"/>
+    <div class="row">
+      <label class="col s12 signup-label">Email:</label>
+      <input class="col s12 test validate" type="text" name="username"/>
     </div>
-    <div>
-      <label class="signup-label">Password:</label>
-      <input class="test" type="password" name="password"/>
+    <div class="row">
+      <label class="col s12 signup-label">Password:</label>
+      <input class="col s12 test validate" type="password" name="password"/>
     </div>
-    <div>
-      <label class="signup-label">Password (repeat):</label>
-      <input class="test" type="password" name="password2"/>
+    <div class="row">
+      <label class="col s12 signup-label">Password (repeat):</label>
+      <input class="col s12 test validate" type="password" name="password2"/>
     </div>
-    <div>
-      <input class="signup-text" type="submit" value="Sign Up!"/>
+    <div class="row">
+      <input class="col s-3 offset-s4 btn signin center" type="submit" value="Sign me up!"/>
     </div>
   </form>
 </section>

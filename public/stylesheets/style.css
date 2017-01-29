@@ -91,7 +91,6 @@ button a {
 .btn-large:hover {
    background-color: #FFCB47;
 }
-}
 
 .padding {
     padding-left: 2em;
@@ -151,6 +150,7 @@ button a {
   /*font-size: 3em;*/
   font-weight: bold !important;
 }
+
 .large-label {
   font-size: 2em;
   color: #fff;
@@ -195,6 +195,15 @@ button a {
   height: 9vh;
   margin: 4em auto 0 auto;
   background-color: #FEFAE0;
+}
+
+.btn.signin {
+  background-color: #BC6C25;
+  color: #FFF;
+}
+
+.btn.signin:hover {
+   background-color: #FFCB47;
 }
 
 .pf-btn {
@@ -381,7 +390,12 @@ ol {
 }
 
 .signup {
-  margin: 0.5em;
   background-color: #FEFAE0;
-  height: 100vh;
+  height: 90vh;
+}
+
+.no-beers {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 75vh;
 }
