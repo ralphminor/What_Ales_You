@@ -13,7 +13,7 @@ function loginRequired(req, res, next) {
 
 function adminRequired(req, res, next) {
   if (!req.user.is_admin) {
-    return res.render("403", { userName: req.user.username, authenticated: true });
+    return res.render("403");
   }
   next();
 }
@@ -21,17 +21,13 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get("/", loginRequired, (req, res, next) => {
-    res.render("users"), next;
+    console.log("in settings route");
+    db("users")
+    .where("id", req.user.id)
+    .then((user) => {
+      res.render("settings", {
+        user,})
+    }, next)
   })
-  // .get("/", loginRequired, adminRequired, (req, res, next) => {
-  //   res.send("users 2");
-  //   // db("contact_info").then((users) => {
-  //   //   res.render("users", {
-  //   //     title: "All Users",
-  //   //     contact_info,})
-  //   // }, next)
-  // })
-
-
 
 module.exports = router;

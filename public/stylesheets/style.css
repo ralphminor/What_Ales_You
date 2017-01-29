@@ -4,9 +4,6 @@ a {
     font-size: 1em;
 }
 
-.brews-near {
-  margin-top: 2em;
-}
 
 .beer {
   margin-top: 1em;
@@ -24,6 +21,10 @@ button a {
     color: #FFCB47;
 }
 
+.logo-bottle {
+  margin-left: 1em !important;
+}
+
 .logo-mobile {
     color: #FFCB47;
     font-family: 'Eczar', serif;
@@ -34,6 +35,7 @@ button a {
 
 .feature {
   font-family: 'Eczar', serif;
+  color: #BC6C25;
 
 }
 
@@ -42,6 +44,26 @@ button a {
     font-size: 7em;
     margin-top: 0.7em;
     color: #FFCB47;
+}
+
+.big-scrn-header {
+  font-size: 6em;
+  margin-top: .4em;
+}
+
+.sml-scrn-header {
+  font-size: 3.5em;
+  margin-top: 0.5em;
+}
+
+.big-scrn-header2 {
+  font-size: 4em;
+  margin-top: .7em;
+}
+
+.sml-scrn-header2 {
+  font-size: 2em;
+  margin-top: 1.4em;
 }
 
 .logo-arm-mobile {
@@ -68,7 +90,6 @@ button a {
 
 .btn-large:hover {
    background-color: #FFCB47;
-}
 }
 
 .padding {
@@ -101,6 +122,11 @@ button a {
   background-color: #FEFAE0;
 }
 
+/*set the default background color to off-white*/
+.std-body {
+  background-color: #FEFAE0;
+}
+
 .beer-brown-O {
   background-color: #BC6C25;
   opacity: .85;
@@ -112,16 +138,19 @@ button a {
   border:.2em solid #fff;
 }
 
+
+/*delete???*/
 .beer-brown-nearby {
-  background-color: #FEFAE0;
-  margin: 0;
-  padding-left: 2em;
-  padding-right: 2em;
+  /*background-color: #FEFAE0;*/
+  margin: 0 !important;
+  /*padding-left: 3vw;*/
+  /*padding-right: 0.5em;*/
   width: 100vw;
-  height: 100vh;
-  font-size: 1.5em;
+  /*height: 100vh;*/
+  /*font-size: 3em;*/
   font-weight: bold !important;
 }
+
 .large-label {
   font-size: 2em;
   color: #fff;
@@ -141,14 +170,40 @@ button a {
   color: #fff;
 }
 
+.signup-label {
+  font-size: 1.5em;
+  color: #BC6C25;
+}
+
+.test {
+  color: #000 !important;
+  margin: 0 10em 0 1em !important;
+}
+
 .mobile-label-err {
   font-size: 1em;
   color: red;
 }
 
-.mobtn {
-  margin: 1.2em auto 0 auto;
+.mobtnS {
+  height: 12vh;
+  margin: 4em auto 0 auto;
   background-color: #FEFAE0;
+}
+
+.mobtnL {
+  height: 9vh;
+  margin: 4em auto 0 auto;
+  background-color: #FEFAE0;
+}
+
+.btn.signin {
+  background-color: #BC6C25;
+  color: #FFF;
+}
+
+.btn.signin:hover {
+   background-color: #FFCB47;
 }
 
 .pf-btn {
@@ -156,6 +211,7 @@ button a {
 }
 
 .mobtn-text {
+  margin-top: 0.8em;
   color: #BC6C25;
 }
 
@@ -233,6 +289,50 @@ hr.big {
   font-family: 'Work Sans', sans-serif;
 }
 
+.beer-links {
+  font-size: 1.5em;
+  color: #BC6C25;
+}
+
+.beer-links-header {
+  font-size: 2em;
+  color: #BC6C25;
+  text-decoration: underline;
+}
+
+.tabs-headers {
+  font-size: 1em !important;
+  color: #FFCB47 !important;
+  font-weight: bolder;
+  background-color: #BC6C25 !important;
+}
+
+.tabs-headers-lrg {
+  font-size: 2em !important;
+  color: #FFCB47 !important;
+  font-weight: bolder;
+  background-color: #BC6C25 !important;
+}
+
+.tabs .indicator {
+    background-color: #FFCB47;
+}
+
+.tab-main {
+  min-height: 50vh;
+}
+
+.tabs-regular {
+  font-size: 1.2em !important;
+  color: #BC6C25 !important;
+  padding: 0 !important;
+}
+
+.tabs-large {
+  font-size: 1.5em !important;
+  color: #BC6C25 !important;
+}
+
 .beer-list {
   color: black;
   font-weight: 20pt;
@@ -243,14 +343,59 @@ hr.big {
   height: 50vh;
 }
 
-.filler {
+/*.filler {
   height: 10vh !important;
-}
+}*/
 
-.fillerLG {
-  height: 5vh !important;
-}
+  /*.fillerLG {
+    height: 5vh !important;
+  }*/
 
 .my-beer {
-  background-color: grey;
+  background-color: #FEFAE0;
+  color: #BC6C25;
+}
+
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.custom-tab {
+  width: 75vw;
+  margin: 1em auto !important;
+}
+
+ol {
+  margin: 0 !important;
+}
+
+.signup {
+  background-color: #FEFAE0;
+  height: 90vh;
+}
+
+.no-beers {
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 75vh;
 }
