@@ -68,21 +68,33 @@ router
           bdbid: req.params.beerId
         }
 
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();
+        if(dd<10) {
+            dd='0'+dd
+        }
+        if(mm<10) {
+            mm='0'+mm
+        }
+        today = mm+'/'+dd+'/'+yyyy;
+
         let tasting_details = {
           user_id: req.user.id,
-          date: "2017-01-01",
+          date: today,
           location_favorited: false,
           beer_favorited: false,
           beer_id: null,
           brewery_id: null,
           beer_rating: req.body.rating,
-          brewery_rating: 5
+          brewery_rating: null
         }
 
     let brewery_id_promise = find_or_create_brewery(brewery_details);
     let brewery_id_and_beer_id_promise = find_or_create_beer(brewery_id_promise, beer_details);
     let inserted_tasting_obj_promise = insert_tasting(brewery_id_and_beer_id_promise, tasting_details);
-    res.redirect('back');
+    res.redirect('/users');
   }
   })
 })

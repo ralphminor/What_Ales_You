@@ -3,84 +3,157 @@
     <div class="users-mobile hide-on-med-and-up">
         <nav>
             <div class="nav-wrapper nav-mobile">
-                <h3 class="logo-mobile col s12 center">These Ale Me</h3>
+                <a href="/users"><h3 class="logo-mobile col s12 center">What ales you?</h3></a>
             </div>
         </nav>
-        <div class="">
-            <div class="row center">
-                <div class="col s12">
-                    <div class="row">
-                        <button id="b-button" href="/beers" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
-                        <button id="br-button" href="/ratings" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
-                        <button id="f-button" href="/favs" class="col s10 offset-s1 z-depth-3 mobtn btn-large"><h4 class="mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
-                    </div>
-                    <div class="row my-beer">
-                        {{#if beers}}
-                            <table>
-                                <tr>
-                                    <th>Beer Name</th>
-                                    <th>ABV</th>
-                                    <th>Rating</th>
-                                </tr>
-                                {{#each beers}}
-                                    <tr>
-                                        <td>{{name}}</td>
-                                        <td>{{abv}}</td>
-                                        <td>{{beer_rating}}</td>
-                                    </tr>
-                                {{/each}}
-                              </table>
-                        {{else}}
-                            <p>No beers!</p>
-                        {{/if}}
-                    </div>
+
+
+        <div class="row">
+
+                <ul class="tabs row">
+                    <li class="tab col s4"><a class="active tabs-headers" href="#mybeers">My Beers</a></li>
+                    <li class="tab col s4"><a class="tabs-headers" href="#mybrews">My Breweries</a></li>
+                    <li class="tab col s4"><a class="tabs-headers" href="#myfavs">My Favs</a></li>
+                </ul>
+
+
+
+                <div class="row my-beer">
+                    {{#if beers}}
+                        <ol>
+                            {{#each beers}}
+                                <li class="beer-links">
+                                    <b>{{date}} </b>, Name: {{name}}, ABV: {{abv}}, Brewery: {{brewery}},
+                                    <b>Rating: {{beer_rating}}</b>
+                                </li>
+                            {{/each}}
+                        </ol>
+                    {{else}}
+                      <div class="no-beers"
+                        <p class="beer-links center">You have no beer ratings yet!</p>
+                        <p class="beer-links center">Time to go to the pub!</p>
+                      </div>
+                    {{/if}}
                 </div>
-            </div>
+
+
+            <div id="mybrews" class="col s12">Test 2</div>
+            <div id="myfavs" class="col s12">Test 3</div>
         </div>
     </div>
 
+
     <!-- header large screem -->
-    <div class="hide-on-small-only">
-        <header class="row jumbo">
-            <div>
+    <div class="hide-on-small-only row jumbo">
+
+            <div class="row">
                 <img src="img/arm-2-brown.svg" class="arm col s3 logo-arm-left left">
-                <h1 class="col s6 center logo-big">These Ale Me</h1>
+                <a href="/users"><h1 class="col s6 center logo-big">What ales you?</h1></a>
                 <img src="img/arm-right-brown.svg" class="col s3 logo-arm-right right">
             </div>
-            <div class="row center-align large-copy">
-                <div class="padding col s12">
-                    <div class="row">
-                        <button id="beer-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Beers <i class="fa fa-beer" aria-hidden="true"></i></h4></button>
-                        <button id="brew-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Breweries <i class="fa fa-star-o" aria-hidden="true"></i></h4></button>
-                        <button id="fav-button" class="col s4 z-depth-2 mobtn btn-large"><h4 class="pf-btn mobtn-text">My Favs <i class="fa fa-thumbs-o-up" aria-hidden="true"></i></h4></button>
-                    </div>
-                    <div class="row my-beer">
+
+            <div class="custom-tab row">
+                <div class="col s12 tabs-regular">
+                    <ul class="tabs row">
+                        <li class="tab col s4"><a class="active tabs-headers-lrg" href="#mybeers2">My Beers</a></li>
+                        <li class="tab col s4"><a class="tabs-headers-lrg" href="#mybrews2">My Breweries</a></li>
+                        <li class="tab col s4"><a class="tabs-headers-lrg" href="#myfavs2">My Favs</a></li>
+                    </ul>
+                </div>
+
+                <div id="mybeers2" class="row tab-main my-beer">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s3 tabs-regular">
+                                <h4>Beer Name</h4></div>
+                            <div class="col s1 offset-s1 tabs-regular">
+                                <h4>ABV</h4></div>
+                            <div class="col s1 offset-s1 tabs-regular center">
+                                <h4>Rating</h4></div>
+                            <div class="col s3 offset-s1 tabs-regular">
+                                <h4>Brewery</h4></div>
+                        </div>
                         {{#if beers}}
-                            <table>
-                                <tr>
-                                    <th>Beer Name</th>
-                                    <th>ABV</th>
-                                    <th>Rating</th>
-                                </tr>
-                                {{#each beers}}
-                                    <tr>
-                                        <td>{{name}}</td>
-                                        <td>{{abv}}</td>
-                                        <td>{{beer_rating}}</td>
-                                    </tr>
-                                {{/each}}
-                              </table>
+
+                            {{#each beers}}
+                                <div class="row">
+                                    <div class="col s3 tabs-large">{{name}}</div>
+                                    <div class="col s1 offset-s1 tabs-large">{{abv}}</div>
+                                    <div class="col s1 offset-s1 tabs-large center">{{beer_rating}}</div>
+                                    <div class="col s3 offset-s1 tabs-large">{{brewery}}</div>
+                                </div>
+                            {{/each}}
+
                         {{else}}
-                            <p>No beers!</p>
+                            <p class="beer-links center">You have no beer ratings yet!</p>
+                            <p class="beer-links center">Time to go to the pub!</p>
                         {{/if}}
                     </div>
                 </div>
+
+                <div id="mybrews2" class="col s12 tab-main my-beer">
+                  <div class="col s12">
+                      <div class="row">
+                          <div class="col s4 tabs-regular">
+                              <h4>Beer Name</h4></div>
+                          <div class="col s1 offset-s1 tabs-regular">
+                              <h4>ABV</h4></div>
+                          <div class="col s1 offset-s1 tabs-regular">
+                              <h4>Rating</h4></div>
+                          <div class="col s4 tabs-regular">
+                              <h4>Brewery</h4></div>
+                      </div>
+                      {{#if beers}}
+
+                          {{#each beers}}
+                              <div class="row">
+                                  <div class="col s4 tabs-large">{{name}}</div>
+                                  <div class="col s1 offset-s1 tabs-large">{{abv}}</div>
+                                  <div class="col s1 offset-s1 tabs-large">{{beer_rating}}</div>
+                                  <div class="col s4 tabs-large">{{brewery}}</div>
+                              </div>
+                          {{/each}}
+
+                      {{else}}
+                          <p class="beer-links center">You have no beer ratings yet!</p>
+                          <p class="beer-links center">Time to go to the pub!</p>
+                      {{/if}}
+                  </div>
+                </div>
+
+                <div id="myfavs2" class="col s12 tab-main my-beer">
+                  <div class="col s12">
+                      <div class="row">
+                          <div class="col s4 tabs-regular">
+                              <h4>Beer Name</h4></div>
+                          <div class="col s1 offset-s1 tabs-regular">
+                              <h4>ABV</h4></div>
+                          <div class="col s1 offset-s1 tabs-regular">
+                              <h4>Rating</h4></div>
+                          <div class="col s4 tabs-regular">
+                              <h4>Brewery</h4></div>
+                      </div>
+                      {{#if beers}}
+
+                          {{#each beers}}
+                              <div class="row">
+                                  <div class="col s4 tabs-large">{{name}}</div>
+                                  <div class="col s1 offset-s1 tabs-large">{{abv}}</div>
+                                  <div class="col s1 offset-s1 tabs-large">{{beer_rating}}</div>
+                                  <div class="col s4 tabs-large">{{brewery}}</div>
+                              </div>
+                          {{/each}}
+
+                      {{else}}
+                          <p class="beer-links center">You have no beer ratings yet!</p>
+                          <p class="beer-links center">Time to go to the pub!</p>
+                      {{/if}}
+                  </div>
+                </div>
+
             </div>
-        </header>
+
     </div>
     <script>
-        // $('#beer-button').click(function() {
-        //   $('.my-beer').fadeToggle()
-        // })
     </script>
 </body>

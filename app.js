@@ -12,6 +12,7 @@ require("./passport");
 
 const landing = require('./routes/landing');
 const dash = require('./routes/dash');
+const settingsRoutes = require('./routes/settings');
 const brewery = require('./routes/brewery');
 const nearby = require('./routes/nearby');
 const rate = require('./routes/rate');
@@ -52,6 +53,7 @@ app.use('/brewery', brewery);
 app.use('/beers', beersRoutes);
 app.use('/nearby', nearby);
 app.use('/rate', rate);
+app.use('/settings', settingsRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
