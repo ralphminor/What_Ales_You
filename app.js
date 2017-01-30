@@ -21,6 +21,13 @@ const beersRoutes = require("./routes/beers");
 const users = require('./routes/users');
 const hbs = require('hbs');
 hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
+hbs.registerHelper("safefloat", function(value, options) {
+    if (value === "NaN") {
+        return "-";
+    }
+
+    return value;
+});
 
 const app = express();
 

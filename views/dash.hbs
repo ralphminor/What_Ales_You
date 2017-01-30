@@ -23,10 +23,10 @@
 
                         <ol>
                             {{#each beers}}
-                                <li class="beer-links">
-                                    <b>{{dateFormat date "dddd, MMMM Do YYYY"}} </b>, Name: {{name}}, ABV: {{abv}}, Brewery: {{brewery}},
-                                    <b>Rating: {{beer_rating}}</b>
-                                </li>
+                            <li class="beer-links">
+                                <b>{{dateFormat date "dddd, MMMM Do YYYY"}} </b> <br>Name: {{name}} <br> ABV: {{safefloat abv}}<br> Brewery: {{brewery}}<br><b>Rating: {{beer_rating}}</b>
+                            </li>
+                            <br>
                             {{/each}}
                         </ol>
                       </div>
@@ -80,7 +80,7 @@
                             {{#each beers}}
                                 <div class="row">
                                     <div class="col s3 tabs-large">{{name}}</div>
-                                    <div class="col s1 offset-s1 tabs-large">{{abv}}</div>
+                                    <div class="col s1 offset-s1 tabs-large">{{safefloat abv}}</div>
                                     <div class="col s1 offset-s1 tabs-large center">{{beer_rating}}</div>
                                     <div class="col s3 offset-s1 tabs-large">{{brewery}}</div>
                                 </div>
