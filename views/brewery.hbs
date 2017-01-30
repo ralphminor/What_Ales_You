@@ -1,14 +1,14 @@
 <!-- list of beers per brewery  -->
 <div class="container">
-<h4 class="feature">{{breweryName}}</h4>
-
+  <div class="row">
+    <a class="col l1 s2 beer" href="/users"><img src="../../../../../../../../img/bottle.png"/></a>
+    <h4 class="feature col l11 s10 brews-near">{{breweryName}}</h4>
+  </div>
 <br>
-<iframe
-      width="50%"
-        height="500px"
-        frameborder="0" style="border:0"
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCY8Xs7OGljGaFq2fGqjo-ygCC6euwArCk&q={{breweryNameSearch}}" allowfullscreen>
-</iframe>
+<div class="intrinsic-container intrinsic-container-16x9">
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCY8Xs7OGljGaFq2fGqjo-ygCC6euwArCk&q={{breweryNameSearch}}" allowfullscreen>
+  </iframe>
+</div>
 
 {{../breweryId}}
 <ul class="collapsible" data-collapsible="accordion">

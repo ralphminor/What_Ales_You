@@ -22,6 +22,7 @@ function adminRequired(req, res, next) {
 router
   .use(bodyParser.json())
   .get('/', loginRequired, function(req, res) {
+    console.log(req.cookies.latitude," and ",req.cookies.longitude, process.env.api_key);
     request("https://api.brewerydb.com/v2/search/geo/point?lat=" + req.cookies.latitude + "&lng=" + req.cookies.longitude + "&key=" + process.env.api_key, function (error, response, body) {
       if (!error && response.statusCode === 200) {
         let allResults = JSON.parse(body).data;
@@ -40,9 +41,9 @@ router
           }
           element.phone = encodeURIComponent(element.phone) || "000-000-0000";
         });
-        console.log(`All results *** ${allResults}`);
+        // console.log()
         res.render('nearby', {
-          brews: allResults.filter(function(item) { return item.name === "Main Brewery"}).splice(0, 50),
+          brews: allResults.filter(function(item) { return item.name === "Main Brewery"}).splice(0, 12),
           lat: req.params.lat,
           lng: req.params.lon});
       }
