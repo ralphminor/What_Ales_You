@@ -19,6 +19,8 @@ const rate = require('./routes/rate');
 const authRoutes = require("./routes/auth");
 const beersRoutes = require("./routes/beers");
 const users = require('./routes/users');
+const hbs = require('hbs');
+hbs.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 const app = express();
 
