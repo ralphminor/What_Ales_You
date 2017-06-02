@@ -26,4 +26,6 @@ A mobile first app where users view nearby breweries and brewpubs then view the 
 3. Users can rate a beer (1 to 5) and their ratings are automatically saved to their saved ratings list.
 3. User can view, update and delete their past ratings and visits.
 
+<img width="1679" alt="whatalesyouwebss" src="https://cloud.githubusercontent.com/assets/22082195/26707805/a9cd1422-4704-11e7-9acf-49add5ceb08e.png">
+
 <img width="470" alt="whatalesyoumobiless" src="https://cloud.githubusercontent.com/assets/22082195/26707769/75e1cce8-4704-11e7-8930-0310d644fe9a.png">
