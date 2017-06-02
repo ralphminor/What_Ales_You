@@ -1,4 +1,4 @@
-https://whatalesyou.ralphminor.com
+https://whatalesyou.herokuapp.com
 
 # Q2 Project - TEAM ICP: What Ales You App
 
