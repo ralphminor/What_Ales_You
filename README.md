@@ -5,7 +5,7 @@ https://whatalesyou.herokuapp.com
 ## Team ICP Members
 #### Jeff Diers, Ethan Granato, Ralph Minor, Steve VanWoerkom
 
-##PROJECT DESCRIPTION
+## PROJECT DESCRIPTION
 #### **What Ales You** is a mobile first app that allows you to track and rate your favorite beers from breweries and brewpubs that you visit.  View nearby breweries and brewpubs, view the names, descriptions and ABV (alcohol by volume) of the beers offered, rate and save the ratings of the beers you try.  Review, update or delete your ratings at any time.
 
 ### Problem Statement:
